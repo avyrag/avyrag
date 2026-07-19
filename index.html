@@ -3,48 +3,39 @@
 <head>
 <style>
     body { margin: 0; padding: 0; background-color: #f7a8c4; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    
     #container { 
         position: relative; width: 900px; height: 400px; 
-        background-image: url('https://images.steamusercontent.com/ugc/9898832550683467133/4B868ECFF83BEF5B0409424904ED3972710BF649/'); 
+        background-image: url('https://images.steamusercontent.com/ugc/16236944222324024971/9D21B23970B40864F53347FEDA93C7FA2EC67A9F/'); 
         background-size: 900px 400px; background-repeat: no-repeat;
         border: 4px solid white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
     }
-    
-    /* Player de Vídeo Local */
-    #video-principal { position: absolute; top: 58px; left: 285px; width: 338px; height: 193px; border: none; background-color: black; }
-    
+    /* Mantive a posição original do seu vídeo */
+    #janela-conteudo { position: absolute; top: 58px; left: 285px; width: 338px; height: 193px; border: none; background-color: black; }
     .btn-gratis { position: absolute; width: 100px; height: 60px; cursor: pointer; background: transparent; border: none; z-index: 10; }
-    
     #link-steam { position: absolute; top: 70px; left: 65px; width: 85px; height: 85px; z-index: 10; }
-    #contador { position: absolute; top: 34px; left: 750px; color: white; font-family: sans-serif; font-weight: bold; font-size: 20px; }
+    #contador { position: absolute; top: 34px; left: 750px; color: white; font-family: sans-serif; font-weight: bold; font-size: 15px; }
 </style>
 </head>
 <body>
 
 <div id="container">
-    <!-- Player Principal apontando para o arquivo local -->
-    <video id="video-principal" controls>
-        <source id="fonte-video" src="videos/AVYRADBD1_.mp4" type="video/mp4">
-    </video>
+    <!-- O iframe fica exatamente onde estava o seu vídeo -->
+    <iframe id="janela-conteudo" name="janela-conteudo" src="videos/AVYRADBD1_.mp4"></iframe>
 
-    <!-- Botões chamando arquivos da pasta -->
-    <button class="btn-gratis" style="top: 320px; left: 270px;" onclick="trocarVideo('videos/AVYRADBD1_.mp4')"></button>
-    <button class="btn-gratis" style="top: 320px; left: 400px;" onclick="trocarVideo('videos/video2.mp4')"></button>
-    <button class="btn-gratis" style="top: 320px; left: 530px;" onclick="trocarVideo('videos/video3.mp4')"></button>
+    <!-- Botão 1: Vídeo (Link direto para o arquivo) -->
+    <a href="videos/AVYRADBD1_.mp4" target="janela-conteudo" class="btn-gratis" style="top: 320px; left: 270px;"></a>
+
+    <!-- Botão 2: Jogo (Você precisa ter o arquivo jogo.html criado) -->
+    <a href="Pg2.html" target="_self" class="btn-gratis" style="top: 320px; left: 400px;"></a>
+
+    <!-- Botão 3: Outra página -->
+    <a href="pagina3.html" target="_self" class="btn-gratis" style="top: 320px; left: 530px;"></a>
 
     <a id="link-steam" href="https://steamcommunity.com/id/avyrag/" target="_blank"></a>
     <div id="contador">1.197</div>
 </div>
 
 <script>
-    function trocarVideo(caminho) { 
-        var video = document.getElementById('video-principal');
-        var fonte = document.getElementById('fonte-video');
-        fonte.src = caminho;
-        video.load();
-        video.play();
-    }
 
     function atualizarContador() {
         var n = Math.floor(Math.random() * (999 - 990 + 1)) + 1;
