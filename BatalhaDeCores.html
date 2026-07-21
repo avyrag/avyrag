@@ -1449,7 +1449,7 @@ input[type=range]::-moz-range-thumb {
                         <span class=item-label data-translate-key=item_save>SAVE</span>
                         <span class=item-count id=playerSavesCount>0</span>
                     </div>
-                    <button class=btn-buy id=buySaveBtn data-cost=10000>10000</button>
+                    <button class=btn-buy id=buySaveBtn data-cost=500>500</button>
                 </div>
                 <div class=store-grid>
                     <div class=store-item>
@@ -2182,11 +2182,11 @@ const infinitySVG = `<svg viewBox="0 0 24 30" shape-rendering="crispEdges"><path
             let session_lastLevel = 0, session_lastScore = 0;
             let mouseX, mouseY, isMouseDown = false;
             let killLine;
-            const SAVE_COST = 10000;
+            const SAVE_COST = 500;
     
             const abilityData = {
                 laser: { 
-                    costs: [50000, 75000, 100000], 
+                    costs: [1500, 2500, 3000], 
                     level: 0, 
                     btnEl: buyLaserBtnEl, 
                     switchContainerEl: laserSwitchContainerEl, 
@@ -2194,7 +2194,7 @@ const infinitySVG = `<svg viewBox="0 0 24 30" shape-rendering="crispEdges"><path
                     switchEl: laiserSwitchEl 
                 },
                 slowMotion: { 
-                    costs: [75000, 100000, 125000], 
+                    costs: [1000, 2000, 3000], 
                     level: 0, 
                     btnEl: buySlowMotionBtnEl, 
                     switchContainerEl: slowMotionSwitchContainerEl, 
@@ -2202,7 +2202,7 @@ const infinitySVG = `<svg viewBox="0 0 24 30" shape-rendering="crispEdges"><path
                     switchEl: cameraLentaSwitchEl 
                 },
                 paintBomb: { 
-                    costs: [60000, 85000, 110000], 
+                    costs: [1500, 2500, 3500], 
                     level: 0, 
                     btnEl: buyPaintBombBtnEl, 
                     switchContainerEl: paintBombSwitchContainerEl, 
@@ -2210,7 +2210,7 @@ const infinitySVG = `<svg viewBox="0 0 24 30" shape-rendering="crispEdges"><path
                     switchEl: paintBombSwitchEl
                 },
                 homingMissile: { 
-                    costs: [40000, 60000, 80000], 
+                    costs: [300, 600, 690], 
                     level: 0, 
                     btnEl: buyHomingMissileBtnEl, 
                     switchContainerEl: homingMissileSwitchContainerEl, 
@@ -2218,12 +2218,12 @@ const infinitySVG = `<svg viewBox="0 0 24 30" shape-rendering="crispEdges"><path
                     switchEl: homingMissileSwitchEl 
                 },
                 strongShot: {
-                    costs: [80000, 120000, 160000],
+                    costs: [1500, 2500, 3000],
                     level: 0,
                     btnEl: buyStrongShotBtnEl
                 },
                 exorcist: { 
-                    costs: [200000, 250000, 300000], 
+                    costs: [1500, 2500, 3000], 
                     level: 0, 
                     btnEl: buyExorcistBtnEl, 
                     switchContainerEl: exorcistSwitchContainerEl, 
@@ -2231,7 +2231,7 @@ const infinitySVG = `<svg viewBox="0 0 24 30" shape-rendering="crispEdges"><path
                     switchEl: exorcistSwitchEl 
                 },
                 enemies: {
-                    costs: [50000, 100000, 150000],
+                    costs: [1500, 2500, 3000],
                     level: 0,
                     btnEl: buyEnemiesBtnEl,
                     switchContainerEl: enemiesSwitchContainerEl,
@@ -4400,12 +4400,12 @@ if (eBullet.x < colorPlayer.x + colorPlayer.width && eBullet.x + eBullet.size > 
  const initializeThemeColors = () => {
      themeColors = {
          'default':{ color: '#00F0FF', cost: 0,    purchased: true },
-         'magenta':{ color: '#F900BF', cost: 25000, purchased: false },
-         'green':  { color: '#50fa7b', cost: 25000, purchased: false },
-         'yellow': { color: '#f1fa8c', cost: 25000, purchased: false },
-         'orange': { color: '#ffb86c', cost: 25000, purchased: false },
-         'purple': { color: '#bd93f9', cost: 35000, purchased: false },
-         'white':  { color: '#FFFFFF', cost: 50000, purchased: false },
+         'magenta':{ color: '#F900BF', cost: 200, purchased: false },
+         'green':  { color: '#50fa7b', cost: 200, purchased: false },
+         'yellow': { color: '#f1fa8c', cost: 200, purchased: false },
+         'orange': { color: '#ffb86c', cost: 200, purchased: false },
+         'purple': { color: '#bd93f9', cost: 200, purchased: false },
+         'white':  { color: '#FFFFFF', cost: 200, purchased: false },
      };
 
      const savedPurchased = JSON.parse(localStorage.getItem('batalhadecores_purchasedThemeColors') || '["default"]');
